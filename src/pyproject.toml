@@ -1,0 +1,68 @@
+[project]
+name = "short-link"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "alembic>=1.16.5",
+    "asyncpg>=0.30.0",
+    "fastapi>=0.116.1",
+    "jedi>=0.19.2",
+    "jedi-language-server>=0.45.1",
+    "psycopg2-binary>=2.9.10",
+    "pydantic>=2.11.7",
+    "pydantic-settings>=2.10.1",
+    "ruff>=0.13.0",
+    "sqlalchemy>=2.0.43",
+    "uvicorn>=0.35.0",
+]
+
+[tool.ruff]
+exclude = [".venv"]
+
+[tool.ruff.format]
+quote-style = "double"
+
+[tool.ruff.lint]
+select = ["ALL"]
+ignore = [
+    "ANN003",
+    "COM812",
+    "D100",
+    "D101",
+    "D102",
+    "D103",
+    "D104",
+    "D105",
+    "D106",
+    "D107",
+    "D200",
+    "D202",
+    "D203",
+    "D205",
+    "D212",
+    "D213",
+    "Q000",
+    "Q003",
+    "INP001",
+    "S105",
+    "S106",
+    "RUF001",
+    "RUF002",
+    "RUF003",
+    "PLC0415",
+    "PLR0913"
+]
+
+[tool.ruff.lint.isort]
+case-sensitive = true
+section-order = ["future", "standard-library", "third-party", "first-party", "local-folder"]
+default-section = "third-party"
+force-sort-within-sections = true
+lines-after-imports = 2
+relative-imports-order = "closest-to-furthest"
+known-third-party = ["alembic"]
+
+[tool.ruff.lint.mccabe]
+max-complexity = 5
